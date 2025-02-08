@@ -1,4 +1,4 @@
-while wait() do 
+while wait(1) do 
 	for i, v in ipairs(game.CoreGui:GetChildren()) do
 		if v.Name == "Window" or v.Name == "Dex" then
 			v:Destroy()
