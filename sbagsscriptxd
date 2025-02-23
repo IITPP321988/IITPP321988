@@ -1,3 +1,4 @@
+--THIS SCRIPT BY 'anitcheat'
 function newStoke(arg,arg1)
 	local uistroke1=Instance.new("UIStroke",arg)
 	uistroke1.ApplyStrokeMode=arg1
