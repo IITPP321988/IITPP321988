@@ -76,12 +76,26 @@ SettMainButt3.TextColor3=Color3.fromRGB(255,255,255)
 SettMainButt3.TextStrokeTransparency=0
 SettMainButt3.TextStrokeColor3=Color3.fromRGB(0,0,0)
 SettMainButt3.TextScaled=true
+local SettMainButt4=Instance.new("TextButton",frame2)
+SettMainButt4.Name="PlayerSetting"
+newCorner(SettMainButt4,0.05)
+newStoke(SettMainButt4,Enum.ApplyStrokeMode.Border)
+SettMainButt4.BackgroundColor3=Color3.fromRGB(100, 100, 100)
+SettMainButt4.FontFace=Font.fromName("FredokaOne")
+SettMainButt4.Text="Player"
+SettMainButt4.TextColor3=Color3.fromRGB(255,255,255)
+SettMainButt4.TextStrokeTransparency=0
+SettMainButt4.TextStrokeColor3=Color3.fromRGB(0,0,0)
+SettMainButt4.TextScaled=true
 local Main1=Instance.new("Frame",frame1)
 local Main2=Instance.new("Frame",frame1)
 local Main3=Instance.new("Frame",frame1)
+local Main4=Instance.new("Frame",frame1)
 Main1.Name="ServerCrashMain"
 Main2.Name="TrollMain"
 Main3.Name="AntiMain"
+Main4.Name="PlayerMain"
+
 Main1.AnchorPoint=Vector2.new(1,1)
 Main1.BackgroundColor3=Color3.fromRGB(75,75,75)
 Main1.Position=UDim2.new(1,0,1,0)
@@ -94,6 +108,10 @@ Main3.AnchorPoint=Vector2.new(1,1)
 Main3.BackgroundColor3=Color3.fromRGB(75,75,75)
 Main3.Position=UDim2.new(1,0,1,0)
 Main3.Size=UDim2.new(0.8, 0,0.85, 0)
+Main4.AnchorPoint=Vector2.new(1,1)
+Main4.BackgroundColor3=Color3.fromRGB(75,75,75)
+Main4.Position=UDim2.new(1,0,1,0)
+Main4.Size=UDim2.new(0.8, 0,0.85, 0)
 Main1.Visible=false
 Main2.Visible=false
 Main3.Visible=false
@@ -159,7 +177,26 @@ buttonAntiVoid.TextScaled=true
 buttonAntiVoid.TextColor3=Color3.fromRGB(255,255,255)
 buttonAntiVoid.TextStrokeColor3=Color3.fromRGB(0,0,0)
 buttonAntiVoid.TextStrokeTransparency=0
-
+local SpeedButton=Instance.new("TextBox",Main4)
+newStoke(SpeedButton,Enum.ApplyStrokeMode.Border)
+SpeedButton.BackgroundColor3=Color3.fromRGB(25,25,25)
+SpeedButton.BackgroundTransparency=0.75
+SpeedButton.FontFace=Font.fromName("FredokaOne")
+SpeedButton.PlaceholderText="Player Speed"
+SpeedButton.TextScaled=true
+SpeedButton.TextColor3=Color3.fromRGB(255,255,255)
+SpeedButton.TextStrokeColor3=Color3.fromRGB(0,0,0)
+SpeedButton.TextStrokeTransparency=0
+local JumpPButton=Instance.new("TextBox",Main4)
+newStoke(JumpPButton,Enum.ApplyStrokeMode.Border)
+JumpPButton.BackgroundColor3=Color3.fromRGB(25,25,25)
+JumpPButton.BackgroundTransparency=0.75
+JumpPButton.FontFace=Font.fromName("FredokaOne")
+JumpPButton.PlaceholderText="Player JumpPower"
+JumpPButton.TextScaled=true
+JumpPButton.TextColor3=Color3.fromRGB(255,255,255)
+JumpPButton.TextStrokeColor3=Color3.fromRGB(0,0,0)
+JumpPButton.TextStrokeTransparency=0
 
 
 
@@ -181,16 +218,25 @@ SettMainButt1.MouseButton1Down:Connect(function()
 	Main1.Visible=true
 	Main2.Visible=false
 	Main3.Visible=false
+	Main4.Visible=false
 end)
 SettMainButt2.MouseButton1Down:Connect(function()
 	Main1.Visible=false
 	Main2.Visible=true
 	Main3.Visible=false
+	Main4.Visible=false
 end)
 SettMainButt3.MouseButton1Down:Connect(function()
 	Main1.Visible=false
 	Main2.Visible=false
 	Main3.Visible=true
+	Main4.Visible=false
+end)
+SettMainButt4.MouseButton1Down:Connect(function()
+	Main1.Visible=false
+	Main2.Visible=false
+	Main3.Visible=false
+	Main4.Visible=true
 end)
 HideButton.MouseButton1Down:Connect(function()
 	if frame1.Visible==true then
@@ -289,7 +335,7 @@ buttonCrash.MouseButton1Down:Connect(function()
 		end
 		wait(0.25)
 		game.Players.LocalPlayer.Character:PivotTo(workspace.NormalArena.PortalTrigger.CFrame)
-		wait(1)
+		wait(0.75)
 		game.Players.LocalPlayer.Character:PivotTo(workspace.Legend.Screen.CFrame*CFrame.new(0,500,0))
 		for i, v in ipairs(workspace:GetChildren()) do
 			if v.Name == "SlapGloveStand" then
@@ -320,16 +366,40 @@ game:GetService("RunService").RenderStepped:Connect(function()
 	if spamMode == true then
 		for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
 			if v:IsA("RemoteEvent") and v:FindFirstAncestorOfClass("Tool") then
-				if s=="BOBBLE" or s=="Minecraft" or s=="Nerfer" or s=="PongPing" or s=="Subspace Tripmine" or s=="Purple" or s=="Builderman" then
-					v:FireServer("lego")
-				elseif s=="Table" or s=="Fuga" then
+				if s=="Table" or s=="Fuga" then
 					v:FireServer("Move")
-				elseif s=="Imaginary" then
-					v:FireServer(20)
-				elseif s=="Train" then
+				end
+			end
+		end
+		for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v:IsA("RemoteEvent") and v:FindFirstAncestorOfClass("Tool") then
+				if s=="Train" then
 					v:FireServer("TRAIN")
 				end
 			end
 		end
+		for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v:IsA("RemoteEvent") and v:FindFirstAncestorOfClass("Tool") then
+				if s=="BOBBLE" or s=="Minecraft" or s=="Nerfer" or s=="PongPing" or s=="Subspace Tripmine" or s=="Purple" or s=="Builderman" then
+					v:FireServer("lego")
+				end
+			end
+		end
+		for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v:IsA("RemoteEvent") and v:FindFirstAncestorOfClass("Tool") then
+				if s=="Imaginary" then
+					v:FireServer(20)
+				end
+			end
+		end
+		for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v:IsA("RemoteEvent") and v:FindFirstAncestorOfClass("Tool") then
+				if s=="Dummy" then
+					v:FireServer("Ability")
+				end
+			end
+		end
 	end
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=SpeedButton.Text
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower=JumpPButton.Text
 end)
