@@ -23,7 +23,7 @@ TextLabel1.TextScaled=true
 TextLabel1.Text="Slap Battles Admin Gloves Script"
 TextLabel1.TextStrokeTransparency=0
 TextLabel1.TextStrokeColor3=Color3.fromRGB(0,0,0)
-local HideButton=Instance.new("ImageLabel",TextLabel1)
+local HideButton=Instance.new("ImageButton",TextLabel1)
 newStoke(HideButton,Enum.ApplyStrokeMode.Border)
 HideButton.Size=UDim2.new(0, 60,0, 60)
 HideButton.Position=UDim2.new(1.005, 0,0, 0)
