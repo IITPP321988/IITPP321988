@@ -87,6 +87,7 @@ SettMainButt4.TextColor3=Color3.fromRGB(255,255,255)
 SettMainButt4.TextStrokeTransparency=0
 SettMainButt4.TextStrokeColor3=Color3.fromRGB(0,0,0)
 SettMainButt4.TextScaled=true
+SettMainButt4.Visible=false
 local Main1=Instance.new("Frame",frame1)
 local Main2=Instance.new("Frame",frame1)
 local Main3=Instance.new("Frame",frame1)
@@ -115,9 +116,11 @@ Main4.Size=UDim2.new(0.8, 0,0.85, 0)
 Main1.Visible=false
 Main2.Visible=false
 Main3.Visible=false
+Main4.Visible=false
 newStoke(Main1,Enum.ApplyStrokeMode.Contextual)
 newStoke(Main2,Enum.ApplyStrokeMode.Contextual)
 newStoke(Main3,Enum.ApplyStrokeMode.Contextual)
+newStoke(Main4,Enum.ApplyStrokeMode.Contextual)
 local griduiInMain1=Instance.new("UIGridLayout",Main1)
 griduiInMain1.CellSize=UDim2.new(1, 0,0.1, 0)
 griduiInMain1.CellPadding=UDim2.new(0, 4,0.011, 0)
@@ -127,6 +130,9 @@ griduiInMain2.CellPadding=UDim2.new(0, 4,0.011, 0)
 local griduiInMain3=Instance.new("UIGridLayout",Main3)
 griduiInMain3.CellSize=UDim2.new(1, 0,0.1, 0)
 griduiInMain3.CellPadding=UDim2.new(0, 4,0.011, 0)
+local griduiInMain4=Instance.new("UIGridLayout",Main4)
+griduiInMain4.CellSize=UDim2.new(1, 0,0.1, 0)
+griduiInMain4.CellPadding=UDim2.new(0, 4,0.011, 0)
 local buttonCrash=Instance.new("TextButton",Main1)
 newStoke(buttonCrash,Enum.ApplyStrokeMode.Border)
 buttonCrash.BackgroundColor3=Color3.fromRGB(25,25,25)
@@ -400,6 +406,4 @@ game:GetService("RunService").RenderStepped:Connect(function()
 			end
 		end
 	end
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed=SpeedButton.Text
-	game.Players.LocalPlayer.Character.Humanoid.JumpPower=JumpPButton.Text
 end)
