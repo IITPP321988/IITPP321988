@@ -355,7 +355,7 @@ buttonCrash.MouseButton1Down:Connect(function()
 		wait(1)
 		game.Players.LocalPlayer.Character:PivotTo(workspace.Legend.Screen.CFrame*CFrame.new(0,500,0))
 		if game.Players.LocalPlayer.Character:FindFirstChild("Minecraft") then
-			for i=1,7500 do
+			for i=1,6000 do
 				game.Players.LocalPlayer.Character["Minecraft"].Event:FireServer("lego")
 			end
 			task.wait(2.5)
