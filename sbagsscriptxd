@@ -1,0 +1,334 @@
+function newStoke(arg,arg1)
+	local uistroke1=Instance.new("UIStroke",arg)
+	uistroke1.ApplyStrokeMode=arg1
+	uistroke1.Thickness=3
+end
+function newCorner(arg,arg1)
+	local UICorner1=Instance.new("UICorner",arg)
+	UICorner1.CornerRadius=UDim.new(arg1,0)
+end
+local gui = Instance.new("ScreenGui",game.CoreGui)
+gui.ResetOnSpawn=false
+gui.ZIndexBehavior=Enum.ZIndexBehavior.Global
+local TextLabel1=Instance.new("TextLabel",gui)
+newStoke(TextLabel1,Enum.ApplyStrokeMode.Border)
+TextLabel1.Position=UDim2.new(0.25, 0,0.25, 0)
+TextLabel1.Size=UDim2.new(0, 652,0, 60)
+TextLabel1.BackgroundColor3=Color3.fromRGB(50, 50, 50)
+TextLabel1.FontFace=Font.fromName("FredokaOne")
+TextLabel1.TextColor3=Color3.fromRGB(255,255,255)
+TextLabel1.Active=true
+TextLabel1.Draggable=true
+TextLabel1.TextScaled=true
+TextLabel1.Text="Slap Battles Admin Gloves Script"
+TextLabel1.TextStrokeTransparency=0
+TextLabel1.TextStrokeColor3=Color3.fromRGB(0,0,0)
+local HideButton=Instance.new("ImageLabel",TextLabel1)
+newStoke(HideButton,Enum.ApplyStrokeMode.Border)
+HideButton.Size=UDim2.new(0, 60,0, 60)
+HideButton.Position=UDim2.new(1.005, 0,0, 0)
+HideButton.Image="rbxassetid://137282837846191"
+HideButton.ImageColor3=Color3.fromRGB(255, 43, 71)
+local frame1=Instance.new("Frame",TextLabel1)
+frame1.BackgroundTransparency=1
+frame1.Size=UDim2.new(1,0,0,402)
+frame1.Position=UDim2.new(0, 0,0.05, 0)
+local frame2=Instance.new("Frame",frame1)
+newStoke(frame2,Enum.ApplyStrokeMode.Contextual)
+frame2.Name="NameSettings"
+frame2.BackgroundColor3=Color3.fromRGB(50,50,50)
+frame2.Position=UDim2.new(0, 0,0.15, 0)
+frame2.Size=UDim2.new(0.2, 0,0.85, 0)
+local grid1 = Instance.new("UIGridLayout",frame2)
+grid1.CellPadding=UDim2.new(0, 4,0.011, 0)
+grid1.CellSize=UDim2.new(1,0,0.1,0)
+local SettMainButt1=Instance.new("TextButton",frame2)
+SettMainButt1.Name="CrashSetting"
+newCorner(SettMainButt1,0.05)
+newStoke(SettMainButt1,Enum.ApplyStrokeMode.Border)
+SettMainButt1.BackgroundColor3=Color3.fromRGB(100, 100, 100)
+SettMainButt1.FontFace=Font.fromName("FredokaOne")
+SettMainButt1.Text="Server"
+SettMainButt1.TextColor3=Color3.fromRGB(255,255,255)
+SettMainButt1.TextStrokeTransparency=0
+SettMainButt1.TextStrokeColor3=Color3.fromRGB(0,0,0)
+SettMainButt1.TextScaled=true
+local SettMainButt2=Instance.new("TextButton",frame2)
+SettMainButt2.Name="TrollSetting"
+newCorner(SettMainButt2,0.05)
+newStoke(SettMainButt2,Enum.ApplyStrokeMode.Border)
+SettMainButt2.BackgroundColor3=Color3.fromRGB(100, 100, 100)
+SettMainButt2.FontFace=Font.fromName("FredokaOne")
+SettMainButt2.Text="Troll"
+SettMainButt2.TextColor3=Color3.fromRGB(255,255,255)
+SettMainButt2.TextStrokeTransparency=0
+SettMainButt2.TextStrokeColor3=Color3.fromRGB(0,0,0)
+SettMainButt2.TextScaled=true
+local SettMainButt3=Instance.new("TextButton",frame2)
+SettMainButt3.Name="AntiSetting"
+newCorner(SettMainButt3,0.05)
+newStoke(SettMainButt3,Enum.ApplyStrokeMode.Border)
+SettMainButt3.BackgroundColor3=Color3.fromRGB(100, 100, 100)
+SettMainButt3.FontFace=Font.fromName("FredokaOne")
+SettMainButt3.Text="Anti"
+SettMainButt3.TextColor3=Color3.fromRGB(255,255,255)
+SettMainButt3.TextStrokeTransparency=0
+SettMainButt3.TextStrokeColor3=Color3.fromRGB(0,0,0)
+SettMainButt3.TextScaled=true
+local Main1=Instance.new("Frame",frame1)
+local Main2=Instance.new("Frame",frame1)
+local Main3=Instance.new("Frame",frame1)
+Main1.Name="ServerCrashMain"
+Main2.Name="TrollMain"
+Main3.Name="AntiMain"
+Main1.AnchorPoint=Vector2.new(1,1)
+Main1.BackgroundColor3=Color3.fromRGB(75,75,75)
+Main1.Position=UDim2.new(1,0,1,0)
+Main1.Size=UDim2.new(0.8, 0,0.85, 0)
+Main2.AnchorPoint=Vector2.new(1,1)
+Main2.BackgroundColor3=Color3.fromRGB(75,75,75)
+Main2.Position=UDim2.new(1,0,1,0)
+Main2.Size=UDim2.new(0.8, 0,0.85, 0)
+Main3.AnchorPoint=Vector2.new(1,1)
+Main3.BackgroundColor3=Color3.fromRGB(75,75,75)
+Main3.Position=UDim2.new(1,0,1,0)
+Main3.Size=UDim2.new(0.8, 0,0.85, 0)
+Main1.Visible=false
+Main2.Visible=false
+Main3.Visible=false
+newStoke(Main1,Enum.ApplyStrokeMode.Contextual)
+newStoke(Main2,Enum.ApplyStrokeMode.Contextual)
+newStoke(Main3,Enum.ApplyStrokeMode.Contextual)
+local griduiInMain1=Instance.new("UIGridLayout",Main1)
+griduiInMain1.CellSize=UDim2.new(1, 0,0.1, 0)
+griduiInMain1.CellPadding=UDim2.new(0, 4,0.011, 0)
+local griduiInMain2=Instance.new("UIGridLayout",Main2)
+griduiInMain2.CellSize=UDim2.new(1, 0,0.1, 0)
+griduiInMain2.CellPadding=UDim2.new(0, 4,0.011, 0)
+local griduiInMain3=Instance.new("UIGridLayout",Main3)
+griduiInMain3.CellSize=UDim2.new(1, 0,0.1, 0)
+griduiInMain3.CellPadding=UDim2.new(0, 4,0.011, 0)
+local buttonCrash=Instance.new("TextButton",Main1)
+newStoke(buttonCrash,Enum.ApplyStrokeMode.Border)
+buttonCrash.BackgroundColor3=Color3.fromRGB(25,25,25)
+buttonCrash.BackgroundTransparency=0.75
+buttonCrash.FontFace=Font.fromName("FredokaOne")
+buttonCrash.Text="Crash Server"
+buttonCrash.TextScaled=true
+buttonCrash.TextColor3=Color3.fromRGB(255,255,255)
+buttonCrash.TextStrokeColor3=Color3.fromRGB(0,0,0)
+buttonCrash.TextStrokeTransparency=0
+local buttonRemoveBrick=Instance.new("TextButton",Main1)
+newStoke(buttonRemoveBrick,Enum.ApplyStrokeMode.Border)
+buttonRemoveBrick.BackgroundColor3=Color3.fromRGB(25,25,25)
+buttonRemoveBrick.BackgroundTransparency=0.75
+buttonRemoveBrick.FontFace=Font.fromName("FredokaOne")
+buttonRemoveBrick.Text="Remove Bricks"
+buttonRemoveBrick.TextScaled=true
+buttonRemoveBrick.TextColor3=Color3.fromRGB(255,255,255)
+buttonRemoveBrick.TextStrokeColor3=Color3.fromRGB(0,0,0)
+buttonRemoveBrick.TextStrokeTransparency=0
+local buttonSpam=Instance.new("TextButton",Main2)
+newStoke(buttonSpam,Enum.ApplyStrokeMode.Border)
+buttonSpam.BackgroundColor3=Color3.fromRGB(255,0,0)
+buttonSpam.BackgroundTransparency=0.75
+buttonSpam.FontFace=Font.fromName("FredokaOne")
+buttonSpam.Text="Spam Glove Ability"
+buttonSpam.TextScaled=true
+buttonSpam.TextColor3=Color3.fromRGB(255,255,255)
+buttonSpam.TextStrokeColor3=Color3.fromRGB(0,0,0)
+buttonSpam.TextStrokeTransparency=0
+local buttonRainBrick=Instance.new("TextButton",Main2)
+newStoke(buttonRainBrick,Enum.ApplyStrokeMode.Border)
+buttonRainBrick.BackgroundColor3=Color3.fromRGB(25,25,25)
+buttonRainBrick.BackgroundTransparency=0.75
+buttonRainBrick.FontFace=Font.fromName("FredokaOne")
+buttonRainBrick.Text="Rain Of Bricks On Spawn"
+buttonRainBrick.TextScaled=true
+buttonRainBrick.TextColor3=Color3.fromRGB(255,255,255)
+buttonRainBrick.TextStrokeColor3=Color3.fromRGB(0,0,0)
+buttonRainBrick.TextStrokeTransparency=0
+local buttonAntiVoid=Instance.new("TextButton",Main3)
+newStoke(buttonAntiVoid,Enum.ApplyStrokeMode.Border)
+buttonAntiVoid.BackgroundColor3=Color3.fromRGB(255, 0, 0)
+buttonAntiVoid.BackgroundTransparency=0.75
+buttonAntiVoid.FontFace=Font.fromName("FredokaOne")
+buttonAntiVoid.Text="Anti-Void"
+buttonAntiVoid.TextScaled=true
+buttonAntiVoid.TextColor3=Color3.fromRGB(255,255,255)
+buttonAntiVoid.TextStrokeColor3=Color3.fromRGB(0,0,0)
+buttonAntiVoid.TextStrokeTransparency=0
+
+
+
+
+-------------------------------------------------------------------------
+local AntiVoidPart=Instance.new("Part",workspace)
+AntiVoidPart.Anchored = true
+AntiVoidPart.Name = "AntiVoidPartlol"
+AntiVoidPart.Position = Vector3.new(167.466, 340, -258.982)
+AntiVoidPart.Size = Vector3.new(2048, 1, 2048)
+AntiVoidPart.Transparency = 1
+AntiVoidPart.CanCollide = false
+-------------------------------------------------------------------------
+local CanUseCrasher=true
+local antivoidOnOff=false
+local spamMode=false
+local CanUseRain=true 
+-------------------------------------------------------------------------
+SettMainButt1.MouseButton1Down:Connect(function()
+	Main1.Visible=true
+	Main2.Visible=false
+	Main3.Visible=false
+end)
+SettMainButt2.MouseButton1Down:Connect(function()
+	Main1.Visible=false
+	Main2.Visible=true
+	Main3.Visible=false
+end)
+SettMainButt3.MouseButton1Down:Connect(function()
+	Main1.Visible=false
+	Main2.Visible=false
+	Main3.Visible=true
+end)
+HideButton.MouseButton1Down:Connect(function()
+	if frame1.Visible==true then
+		frame1.Visible=false
+	else
+		frame1.Visible=true
+	end
+end)
+-------------------------------------------------------------------------
+local s = game.Players.LocalPlayer.leaderstats.Glove.Value
+buttonSpam.MouseButton1Down:Connect(function()
+	if spamMode == false then
+		spamMode = true
+		buttonSpam.BackgroundColor3=Color3.fromRGB(0,255,0)
+	else
+		spamMode = false
+		buttonSpam.BackgroundColor3=Color3.fromRGB(255,0,0)
+	end
+end)
+buttonRemoveBrick.MouseButton1Down:Connect(function()
+	for i, v in ipairs(workspace:GetChildren()) do
+		if v:IsA("Part") and v:FindFirstChild("Mesh") then
+			v:Remove()
+		end
+	end
+end)
+buttonAntiVoid.MouseButton1Down:Connect(function()
+	if antivoidOnOff == false then
+		antivoidOnOff = true
+		buttonAntiVoid.BackgroundColor3=Color3.fromRGB(0,255,0)
+		AntiVoidPart.CanCollide=true
+		AntiVoidPart.Transparency=0.75
+	else
+		antivoidOnOff = false
+		buttonAntiVoid.BackgroundColor3=Color3.fromRGB(255,0,0)
+		AntiVoidPart.CanCollide=false
+		AntiVoidPart.Transparency=1
+	end
+end)
+buttonRainBrick.MouseButton1Down:Connect(function()
+	if CanUseRain == true then
+		CanUseRain = false
+		game.Players.LocalPlayer.Character.Head:remove()
+		task.wait(4)
+		for i, v in ipairs(workspace:GetChildren()) do
+			if v.Name == "SlapGloveStand" then
+				if v:FindFirstChild("Glove") then
+					if v.Glove.NAME.Value == "Minecraft" then
+						fireclickdetector(v:FindFirstChild("Glove").ClickDetector)
+					end
+				end
+			end
+		end
+		wait(0.25)
+		game.Players.LocalPlayer.Character:PivotTo(workspace.NormalArena.PortalTrigger.CFrame)
+		wait(1)
+		game.Players.LocalPlayer.Character:PivotTo(workspace.Legend.Screen.CFrame*CFrame.new(0,500,0))
+		for i, v in ipairs(workspace:GetChildren()) do
+			if v.Name == "SlapGloveStand" then
+				if v:FindFirstChild("Glove") then
+					if v.Glove.NAME.Value == "Table" then
+						fireclickdetector(v:FindFirstChild("Glove").ClickDetector)
+					end
+				end
+			end
+		end
+		wait(1)
+		game.Players.LocalPlayer.Character:PivotTo(workspace.Legend.Screen.CFrame*CFrame.new(0,500,0))
+		if game.Players.LocalPlayer.Character:FindFirstChild("Minecraft") then
+			for i=1,500 do
+				game.Players.LocalPlayer.Character["Minecraft"].Event:FireServer("lego")
+			end
+			task.wait(2.5)
+			game:GetService("TeleportService"):Teleport(game.PlaceId,game.Players.LocalPlayer)
+			game.Players.LocalPlayer:Kick("rain script (kicked for save bricks) rejoin...")
+			game.Players.LocalPlayer:Remove()
+		else
+			CanUseRain = true
+			game.StarterGui:SetCore("SendNotification", {Title = "ERROR",Text = "you dont have minecraft",Icon = content,Duration = 5})
+		end
+	end
+end)
+buttonCrash.MouseButton1Down:Connect(function()
+	if CanUseCrasher == true then
+		game.Players.LocalPlayer.Character.Head:remove()
+		CanUseCrasher = false
+		task.wait(4)
+		for i, v in ipairs(workspace:GetChildren()) do
+			if v.Name == "SlapGloveStand" then
+				if v:FindFirstChild("Glove") then
+					if v.Glove.NAME.Value == "Minecraft" then
+						fireclickdetector(v:FindFirstChild("Glove").ClickDetector)
+					end
+				end
+			end
+		end
+		wait(0.25)
+		game.Players.LocalPlayer.Character:PivotTo(workspace.NormalArena.PortalTrigger.CFrame)
+		wait(1)
+		game.Players.LocalPlayer.Character:PivotTo(workspace.Legend.Screen.CFrame*CFrame.new(0,500,0))
+		for i, v in ipairs(workspace:GetChildren()) do
+			if v.Name == "SlapGloveStand" then
+				if v:FindFirstChild("Glove") then
+					if v.Glove.NAME.Value == "Table" then
+						fireclickdetector(v:FindFirstChild("Glove").ClickDetector)
+					end
+				end
+			end
+		end
+		wait(1)
+		game.Players.LocalPlayer.Character:PivotTo(workspace.Legend.Screen.CFrame*CFrame.new(0,500,0))
+		if game.Players.LocalPlayer.Character:FindFirstChild("Minecraft") then
+			for i=1,500 do
+				game.Players.LocalPlayer.Character["Minecraft"].Event:FireServer("lego")
+			end
+			task.wait(2.5)
+			game:GetService("TeleportService"):Teleport(game.PlaceId,game.Players.LocalPlayer)
+			game.Players.LocalPlayer:Kick("rain script (kicked for save bricks) rejoin...")
+			game.Players.LocalPlayer:Remove()
+		else
+			CanUseCrasher = true
+			game.StarterGui:SetCore("SendNotification", {Title = "ERROR",Text = "you dont have minecraft",Icon = content,Duration = 5})
+		end
+	end
+end)
+game:GetService("RunService").RenderStepped:Connect(function()
+	if spamMode == true then
+		for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v:IsA("RemoteEvent") and v:FindFirstAncestorOfClass("Tool") then
+				if s=="BOBBLE" or s=="Minecraft" or s=="Nerfer" or s=="PongPing" or s=="Subspace Tripmine" or s=="Purple" or s=="Builderman" then
+					v:FireServer("lego")
+				elseif s=="Table" or s=="Fuga" then
+					v:FireServer("Move")
+				elseif s=="Imaginary" then
+					v:FireServer(20)
+				elseif s=="Train" then
+					v:FireServer("TRAIN")
+				end
+			end
+		end
+	end
+end)
